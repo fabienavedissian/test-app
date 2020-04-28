@@ -1,0 +1,32 @@
+<br/>
+<h2>Utilisateur actuel :</h2>
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.firstName }} {{ user.lastName }} {{ user.email }} {{ user.birthday }}
+    </li>
+</ul>
+<br/>
+<form [formGroup]="addForm" #formDirective="ngForm" (ngSubmit)="sendForm()" class="form">
+    <mat-form-field>
+        <mat-label>Prénom</mat-label>
+        <input matInput type="text" formControlName="firstName" #firstNameInput>
+        <mat-error *ngIf="!addF.firstName.valid && addF.firstName.errors.required">Le Prénom est obligatoire.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" formControlName="lastName">
+        <mat-error *ngIf="!addF.lastName.valid && addF.lastName.errors.required">Le Nom est obligatoire.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" formControlName="email">
+        <mat-error *ngIf="!addF.email.valid && addF.email.errors.required">L'e-mail est obligatoire.</mat-error>
+        <mat-error *ngIf="!addF.email.valid && addF.email.errors.email">L'adresse e-mail est incorrect.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date de naissance</mat-label>
+        <input matInput type="text" formControlName="birthday">
+        <mat-error *ngIf="!addF.birthday.valid && addF.birthday.errors.required">La date de naissance est obligatoire.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!addForm.valid">Envoyer</button>
+</form>

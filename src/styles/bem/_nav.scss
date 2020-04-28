@@ -1,0 +1,9 @@
+.nav {
+    background: #c2185b;
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+    }
+}
