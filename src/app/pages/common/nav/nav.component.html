@@ -6,4 +6,7 @@
             </a>
         </li>
     </ul>
+    <span>
+        {{ timeObservable | async | date: 'dd/MM/yyyy : hh:mm:ss' }}
+    </span>
 </nav>

@@ -5,5 +5,8 @@
     <li>{{ user.color }}</li>
 </div>
 </ul>
+<span> {{ myDate | date: 'long' }} </span>
 <button mat-raised-button color="primary" (click)="eventButton($event)" [disabled]="!showText">Cliquer moi</button>
-<div *ngIf="showText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, accusamus a quidem animi error itaque voluptas ipsam iste ut voluptate atque sapiente vel eius qui suscipit. Itaque voluptatem beatae explicabo?</div>
+<div *ngIf="showText">{{ myText | myslice: 120 }}</div>
+<div *ngIf="showText">{{ myText | myslice }}</div>
+<div *ngIf="showText">{{ myText }}</div>

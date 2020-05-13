@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyslicePipe } from './pipes/myslice.pipe';
 
 const MODULES = [
   CommonModule,
@@ -13,12 +14,13 @@ const MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [MyslicePipe],
   imports: [
     MODULES
   ],
   exports: [
-    MODULES
+    MODULES,
+    MyslicePipe
   ]
 })
 export class SharedModule { }

@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'graph',
     loadChildren: () => import('./pages/graph/graph.module').then(m => m.GraphModule)
+  },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('./pages/rxjstest/rxjstest.module').then(m => m.RxjstestModule)
   }
 ];
 
